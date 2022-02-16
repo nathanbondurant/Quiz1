@@ -1,4 +1,5 @@
 import random
+from unicodedata import name
 
 '''
 Create a Weapon Class definition according to the following specs:
@@ -23,7 +24,43 @@ the attribute 'status' to 'Inactive'
 
 '''
 
+class Weapon:
 
+    def __init__(self, name, s, r):
+        self.__name = name
+        self.__speed = s
+        self.__range = r
+        self.__bullets= 0
+        self.__status = 'Active'
+
+    def set_name(self, name):
+        self.__name = name
+    def get_name(self):
+        return self.__name
+
+    def set_bullets(self):
+        self.__bullets = random.randint(10,100)
+    def get_bullets(self):
+        return self.__bullets
+
+    def set_speed(self, s):
+        self.__speed = s
+    def get_speed(self):
+        return self.__speed
+
+    def set_range(self, r):
+        self.__name = r
+    def get_range(self):
+        return self.__range
+
+    def set_status(self):
+        if self.__bullets == 0:
+            self.__status= 'Inactive'
+    def get_status(self):
+        return self.__status
+    
+    def fire_bullet(self):
+        self.__bullets = self.__bullets - 1
 
 
 
