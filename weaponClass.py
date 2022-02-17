@@ -39,7 +39,7 @@ class Weapon:
         return self.__name
 
     def set_bullets(self):
-        self.__bullets = random.randint(10,100)
+        self.__bullets = random.randint(10,100000)
     def get_bullets(self):
         return self.__bullets
 
